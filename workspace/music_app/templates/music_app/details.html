@@ -1,0 +1,33 @@
+{% extends "music_app/base.html" %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %} {{album.album_title }} {%endblock%} </title>
+    </head>
+<body>
+    
+    {% block body %}
+        <h1>Albums</h1>
+        <img src="{{album.album_logo.url}}"></img>
+        
+        <h2> Album Title: {{ album.album_title}}</h2>
+        <h3> Artist: {{album.artist}}</h3>
+        
+         <!--Error Alert-->
+         {% if error_message%}
+             <p><strong>{{ error_message }}</strong></p>
+         {% endif %}
+     
+     <!---->
+        
+        {% for song in album.song_set.all  %}
+
+                {{song.song_title}}
+                    {%if song.is_favorite%} 
+                        <img src="https://s32.postimg.org/u235vnmo5/rsz_1rsz_1rsz_star.png"></img>
+                    {%endif%}<br>
+        {% endfor%}
+        
+ {%endblock%}     
+</body>
+</html>

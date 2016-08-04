@@ -1,0 +1,33 @@
+body{
+    /*background: white url("images/bg.jpg");*/
+    background:url("http://www.musicpiya.com/wp-content/uploads/2015/02/Free-Music-Wallpapers-HD-for-PC-6.jpg") fixed center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.navbar-default{
+    background-color: #21374C !important;
+    border:transparent !important;
+}
+.navbar-brand{
+    font-family: 'Satisfy', cursive;
+    font-size: 2.5em !important;
+    color:white !important;
+}
+
+
+.thumbnail img{
+    padding:5px ;
+}
+
+.navbar-nav li a{
+    color:white !important;
+}
+#img-logo{
+    height:290px;
+}
+#no-album{
+    color:white;
+}
+

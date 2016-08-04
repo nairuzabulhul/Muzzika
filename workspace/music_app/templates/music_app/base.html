@@ -1,0 +1,78 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title%}{% endblock %}</title>
+        <meta  charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'music_app/style.css'%}" type="text/css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" />
+        <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" type="image/png" href="{%  static 'music_app/images/drum.ico' %}"/> <!--ICON -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+    </head>
+    
+<body>
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+        <!-- Header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'music_app:index' %}">Muzzika</a>
+        </div>
+
+        <!-- Items -->
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="{% url 'music_app:index' %}">
+                        <span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp; Albums
+                    </a></li>
+                <li>
+                    <a href="{% url 'music_app:index' %}"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp; Songs
+                </a></li>
+            </ul>
+            <!--END-->
+            <form class="navbar-form navbar-left" role="search" method="get" action="#">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="q" value="">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+            <!--END-->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{% url 'music_app:album-add' %}">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Add Album
+                    </a>
+                </li>
+                
+                 <li>
+                    <a href="{% url 'music_app:index' %}">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Signup
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="{% url 'music_app:index' %}">
+                        <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp; Login
+                    </a>
+                </li>
+            </ul>
+            <!--END-->
+        </div>
+
+    </div>
+</nav>
+<!--END of NAV-->
+
+<!--Body Block-->
+{% block body %}
+{%  endblock %}
+</body>
+</html>
